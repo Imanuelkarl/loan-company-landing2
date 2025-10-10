@@ -88,10 +88,10 @@ const Footer = () => {
 
         <div className="border-t border-dark-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} SimpleCredit. All rights reserved.
+            © {new Date().getFullYear()} Meridian Core Solution. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm">
-            SimpleCredit is a financial consultancy and does not provide banking services.
+            Meridian Core Solution is a financial consultancy and does not provide banking services.
           </p>
         </div>
       </div>

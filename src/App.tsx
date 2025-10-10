@@ -9,6 +9,7 @@ import Markets from './components/Markets'
 import Testimonials from './components/Testimonials'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
+import About from './components/About'
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <About />
         <Services />
         <Process />
         <Markets />

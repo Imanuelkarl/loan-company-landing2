@@ -4,26 +4,26 @@ import { FiDollarSign, FiUsers, FiBriefcase, FiGlobe } from 'react-icons/fi'
 const services = [
   {
     icon: <FiDollarSign className="w-8 h-8 text-primary-500" />,
-    title: "Loan Syndication",
-    description: "Structured debt solutions through collaborative lending from multiple financial institutions for large-scale financing needs.",
+    title: "Loan Facilitation & Syndication",
+    description: "We connect borrowers and lenders, arrange business and commercial loans, and manage the full loan process — from sourcing and validation to documentation and disbursement Our team also monitors loan performance, handles settlements, and ensures smooth, compliant transactions.",
     delay: 100
   },
   {
     icon: <FiUsers className="w-8 h-8 text-primary-500" />,
-    title: "Joint Venture Capital",
-    description: "Strategic equity partnerships that align investor expertise with your business objectives for mutual growth.",
+    title: "Project Finance",
+    description: "We assist clients in structuring and financing long-term projects through expert advisory and financial modeling. From planning to completion, we partner with you to secure funding and achieve your project goals efficiently.",
     delay: 200
   },
   {
     icon: <FiBriefcase className="w-8 h-8 text-primary-500" />,
-    title: "Project Financing",
-    description: "Tailored funding solutions for capital-intensive projects with structured risk allocation and repayment.",
+    title: "Portfolio Management",
+    description: "We select and evaluate top-performing portfolio managers through rigorous screening and performance reviews. Our process ensures your investments are managed by professionals who deliver consistent, high-quality results.",
     delay: 300
   },
   {
     icon: <FiGlobe className="w-8 h-8 text-primary-500" />,
-    title: "International Funding",
-    description: "Cross-border capital solutions leveraging global investor networks for your expansion needs.",
+    title: "Corporate Finance & Strategy",
+    description: "We help businesses drive growth, profitability, and investor value through tailored corporate and financial strategies. Our services include business strategy, M&A advisory, and strategic planning to keep you ahead in a changing market.",
     delay: 400
   }
 ]

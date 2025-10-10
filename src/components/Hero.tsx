@@ -13,7 +13,7 @@ const Hero = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
             >
-              Strategic Capital Solutions for{' '}
+              Meridian Core Solutions LTD.{' '}
               <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
                 Global Growth
               </span>
@@ -24,7 +24,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg text-gray-300 mb-8 max-w-lg"
             >
-              SimpleCredit provides bespoke loan syndication and joint venture capital solutions to fuel your business expansion and large-scale projects.
+              Empowering businesses with expert financial consulting and global funding solutions.
+We connect investors and enterprises through strategic financing, partnerships, and loan facilitation worldwide.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

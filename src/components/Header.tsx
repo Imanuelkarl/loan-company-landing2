@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
+import Logo from '../assets/meridian_core_solutions_logo-removebg-preview.png'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'About' , href: '#about'},
     { name: 'Services', href: '#services' },
     { name: 'Process', href: '#process' },
     { name: 'Markets', href: '#markets' },
@@ -23,9 +25,7 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-              SimpleCredit
-            </span>
+            <img className='w-35 invert' src={Logo} alt='Meridian Logo'/>
           </motion.div>
 
           {/* Desktop Navigation */}
