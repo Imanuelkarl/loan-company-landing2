@@ -4,8 +4,7 @@
 /* Custom styles */
 body {
   font-family:'Poppins', 'Inter', sans-serif;
-  
-  background-color: rgb(2, 6, 67);
+  background: linear-gradient(rgb(7, 22, 65),#2f3b70);
   color: rgb(8, 1, 37);
 }
 @layer utilities {

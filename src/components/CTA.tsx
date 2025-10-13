@@ -1,7 +1,24 @@
 import { motion } from 'framer-motion'
+import emailjs from 'emailjs-com';
+import { useRef } from 'react';
 import { FiArrowRight, FiMail, FiPhone, FiMapPin } from 'react-icons/fi'
 
 const CTA = () => {
+  
+  const formRef = useRef<HTMLFormElement>(null);
+   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (formRef.current) {
+      emailjs.sendForm('service_u0uf3u7', 'template_ehm9wal', formRef.current, 'dCwMP_zmgPxrQl_Bj')
+        .then(() => {
+          alert('Message sent successfully!');
+          (e.target as HTMLFormElement).reset(); // clear form
+        }, () => {
+          alert('Failed to send. Please try again later.');
+        });
+    }
+  };
   return (
     <section id="contact" className="py-20 px-6 bg-gradient-to-br from-dark-800 to-dark-900">
       <div className="container mx-auto">
@@ -51,10 +68,11 @@ const CTA = () => {
             <div className="bg-dark-700 p-8 rounded-lg border border-dark-600">
               <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
               
-              <form>
+              <form ref={formRef} onSubmit={sendEmail}>
                 <div className="mb-6">
                   <label htmlFor="name" className="block text-gray-300 mb-2">Name</label>
                   <input
+                    name="name"
                     type="text"
                     id="name"
                     className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
@@ -66,6 +84,7 @@ const CTA = () => {
                   <label htmlFor="email" className="block text-gray-300 mb-2">Email</label>
                   <input
                     type="email"
+                    name="email"
                     id="email"
                     className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
                     placeholder="your.email@example.com"
