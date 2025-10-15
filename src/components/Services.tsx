@@ -1,7 +1,17 @@
-import { motion } from 'framer-motion'
-import { FiDollarSign, FiUsers, FiBriefcase, FiGlobe } from 'react-icons/fi'
+// components/Services.tsx
+import { motion } from 'framer-motion';
+import type { JSX } from 'react';
+import { FiDollarSign, FiUsers, FiBriefcase, FiGlobe } from 'react-icons/fi';
 
-const services = [
+// Define service interface
+interface Service {
+  icon: JSX.Element;
+  title: string;
+  description: string;
+  delay: number;
+}
+
+const services: Service[] = [
   {
     icon: <FiDollarSign className="w-8 h-8 text-primary-500" />,
     title: "Loan Facilitation & Syndication",
@@ -26,12 +36,12 @@ const services = [
     description: "We help businesses drive growth, profitability, and investor value through tailored corporate and financial strategies. Our services include business strategy, M&A advisory, and strategic planning to keep you ahead in a changing market.",
     delay: 400
   }
-]
+];
 
-const Services = () => {
+const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 px-6 bg-dark-800">
-      <div className="container mx-auto">
+    <section className="min-h-screen py-20 px-6 bg-dark-800 flex items-center">
+      <div className="container mx-auto w-full">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Our <span className="text-primary-400">Specialized Services</span>
@@ -62,7 +72,7 @@ const Services = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

@@ -111,7 +111,7 @@ const About = () => {
             we transform vision into measurable growth.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-10 mt-8 text-center">
+          {/*<div className="flex flex-wrap justify-center gap-10 mt-8 text-center">
             {[
               { value: "15+", label: "Global Partners" },
               { value: "$200M+", label: "Funds Facilitated" },
@@ -122,7 +122,7 @@ const About = () => {
                 <p className="text-sm text-gray-500">{stat.label}</p>
               </div>
             ))}
-          </div>
+          </div>*/}
         </motion.div>
 
         {/* CTA */}

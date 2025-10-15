@@ -1,19 +1,33 @@
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { FiMenu, FiX } from 'react-icons/fi'
-import Logo from '../assets/meridian_core_solutions_logo-removebg-preview.png'
+// components/Header.tsx
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
+import { useNavigation, type SectionType } from '../context/NavigationContext';
+import Logo from '../assets/meridian_core_solutions_logo-removebg-preview.png';
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+// Define nav item interface
+interface NavItem {
+  name: string;
+  id: SectionType;
+}
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About' , href: '#about'},
-    { name: 'Services', href: '#services' },
-    { name: 'Process', href: '#process' },
-    { name: 'Markets', href: '#markets' },
-    { name: 'Contact', href: '#contact' },
-  ]
+const Header: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { activeSection, setActiveSection } = useNavigation();
+
+  const navItems: NavItem[] = [
+    { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Services', id: 'services' },
+    { name: 'Process', id: 'process' },
+    { name: 'Markets', id: 'markets' },
+    { name: 'Contact', id: 'contact' },
+  ];
+
+  const handleNavClick = (sectionId: SectionType): void => {
+    setActiveSection(sectionId);
+    setIsOpen(false);
+  };
 
   return (
     <header className="fixed w-full bg-dark-900/90 backdrop-blur-md z-50 border-b border-dark-700">
@@ -25,22 +39,32 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             className="flex items-center"
           >
-            <img className='w-35 invert' src={Logo} alt='Meridian Logo'/>
+            <button 
+              onClick={() => handleNavClick('home')} 
+              className="cursor-pointer"
+              aria-label="Go to home"
+            >
+              <img className='w-35 invert' src={Logo} alt='Meridian Logo'/>
+            </button>
           </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-primary-400 transition-colors"
+              <motion.button
+                key={item.id}
+                onClick={() => handleNavClick(item.id)}
+                className={`transition-colors ${
+                  activeSection === item.id 
+                    ? 'text-primary-400 font-semibold' 
+                    : 'text-gray-300 hover:text-primary-400'
+                }`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
               >
                 {item.name}
-              </motion.a>
+              </motion.button>
             ))}
           </nav>
 
@@ -50,12 +74,12 @@ const Header = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="hidden md:block"
           >
-            <a
-              href="#contact"
+            <button
+              onClick={() => handleNavClick('contact')}
               className="px-6 py-2 bg-gradient-to-r from-primary-500 to-primary-700 rounded-md text-white font-medium hover:opacity-90 transition-opacity"
             >
               Get Started
-            </a>
+            </button>
           </motion.div>
 
           {/* Mobile menu button */}
@@ -63,6 +87,7 @@ const Header = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-primary-400 focus:outline-none"
+              aria-label="Toggle menu"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </button>
@@ -79,27 +104,30 @@ const Header = () => {
           >
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-300 hover:text-primary-400 transition-colors"
-                  onClick={() => setIsOpen(false)}
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  className={`text-left transition-colors ${
+                    activeSection === item.id 
+                      ? 'text-primary-400 font-semibold' 
+                      : 'text-gray-300 hover:text-primary-400'
+                  }`}
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
-              <a
-                href="#contact"
+              <button
+                onClick={() => handleNavClick('contact')}
                 className="px-6 py-2 bg-gradient-to-r from-primary-500 to-primary-700 rounded-md text-white font-medium hover:opacity-90 transition-opacity text-center"
               >
                 Get Started
-              </a>
+              </button>
             </div>
           </motion.div>
         )}
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

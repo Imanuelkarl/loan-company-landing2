@@ -10,7 +10,7 @@ const CTA = () => {
     e.preventDefault();
 
     if (formRef.current) {
-      emailjs.sendForm('service_u0uf3u7', 'template_ehm9wal', formRef.current, 'dCwMP_zmgPxrQl_Bj')
+      emailjs.sendForm('service_u0uf3u7', 'template_n2v37gm', formRef.current, 'dCwMP_zmgPxrQl_Bj')
         .then(() => {
           alert('Message sent successfully!');
           (e.target as HTMLFormElement).reset(); // clear form
@@ -38,7 +38,7 @@ const CTA = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-medium">Email Us</h4>
-                  <p className="text-gray-400">contact@simplecredit.com</p>
+                  <p className="text-gray-400">doctornadiz@gmail.com</p>
                 </div>
               </div>
               
@@ -95,6 +95,7 @@ const CTA = () => {
                   <label htmlFor="company" className="block text-gray-300 mb-2">Company</label>
                   <input
                     type="text"
+                    name='company'
                     id="company"
                     className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
                     placeholder="Your company"
@@ -105,6 +106,7 @@ const CTA = () => {
                   <label htmlFor="message" className="block text-gray-300 mb-2">How can we help?</label>
                   <textarea
                     id="message"
+                    name='message'
                     rows={4}
                     className="w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
                     placeholder="Tell us about your financing needs..."
