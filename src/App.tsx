@@ -15,6 +15,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import About from './components/About';
 import Spacer from './components/Spacer';
+import Teams from './components/Teams';
 
 // Main content component that handles section visibility
 const MainContent: React.FC = () => {
@@ -28,6 +29,7 @@ const MainContent: React.FC = () => {
     process: <Process />,
     markets: <Markets />,
     testimonials: <Testimonials />,
+    teams: <Teams /> ,
     contact: <CTA />
   };
 
@@ -59,6 +61,7 @@ const RouteHandler: React.FC = () => {
       <Route path="/process" element={<MainContent />} />
       <Route path="/markets" element={<MainContent />} />
       <Route path="/testimonials" element={<MainContent />} />
+      <Route path="/teams" element={<MainContent />} />
       <Route path="/contact" element={<MainContent />} />
       {/* Catch all route - redirect to home */}
       <Route path="*" element={<MainContent />} />

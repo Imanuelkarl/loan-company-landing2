@@ -48,7 +48,8 @@ const CTA = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-medium">Call Us</h4>
-                  <p className="text-gray-400">+1 (555) 123-4567</p>
+                  <p className="text-gray-400">+447438970276</p>
+                  <p className="text-gray-400">+447304489678</p>
                 </div>
               </div>
               
@@ -58,7 +59,8 @@ const CTA = () => {
                 </div>
                 <div className="ml-4">
                   <h4 className="font-medium">Headquarters</h4>
-                  <p className="text-gray-400">123 Financial District, New York, NY 10005</p>
+                  <p className="text-gray-400">S5 9LU
+12, Milnrow Road, Ecclesfield, Sheffield, England</p>
                 </div>
               </div>
             </div>

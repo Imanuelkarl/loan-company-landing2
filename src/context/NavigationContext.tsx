@@ -9,7 +9,8 @@ export type SectionType =
   | 'services' 
   | 'process' 
   | 'markets' 
-  | 'testimonials' 
+  | 'testimonials'
+  | 'teams' 
   | 'contact';
 
 // Define page titles
@@ -20,6 +21,7 @@ export const pageTitles: Record<SectionType, string> = {
   process: 'Our Process - Meridian Core Solutions',
   markets: 'Markets - Meridian Core Solutions',
   testimonials: 'Testimonials - Meridian Core Solutions',
+  teams: 'Leadership Team - Meridian Core Solutions',
   contact: 'Contact Us - Meridian Core Solutions'
 };
 
