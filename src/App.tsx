@@ -16,6 +16,9 @@ import Footer from './components/Footer';
 import About from './components/About';
 import Spacer from './components/Spacer';
 import Teams from './components/Teams';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import TeamMemberDetail from './components/TeamMember';
 
 // Main content component that handles section visibility
 const MainContent: React.FC = () => {
@@ -30,6 +33,8 @@ const MainContent: React.FC = () => {
     markets: <Markets />,
     testimonials: <Testimonials />,
     teams: <Teams /> ,
+    privacy: <PrivacyPolicy/>,
+    terms: <TermsOfService/>,
     contact: <CTA />
   };
 
@@ -62,7 +67,10 @@ const RouteHandler: React.FC = () => {
       <Route path="/markets" element={<MainContent />} />
       <Route path="/testimonials" element={<MainContent />} />
       <Route path="/teams" element={<MainContent />} />
+      <Route path="/privacy" element={<MainContent />} />
+      <Route path="/terms" element={<MainContent />} />
       <Route path="/contact" element={<MainContent />} />
+      <Route path="/team/:memberName" element={<TeamMemberDetail />} />
       {/* Catch all route - redirect to home */}
       <Route path="*" element={<MainContent />} />
     </Routes>

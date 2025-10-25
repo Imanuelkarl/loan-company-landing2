@@ -1,10 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 /* Custom styles */
 body {
   font-family:'Poppins', 'Inter', sans-serif;
-  background: linear-gradient(rgb(7, 22, 65),#2f3b70);
+  /*background: linear-gradient(rgb(7, 22, 65),#2f3b70);*/
   color: rgb(8, 1, 37);
 }
 @layer utilities {

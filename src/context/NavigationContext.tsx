@@ -11,6 +11,8 @@ export type SectionType =
   | 'markets' 
   | 'testimonials'
   | 'teams' 
+  | 'privacy'
+  | 'terms'
   | 'contact';
 
 // Define page titles
@@ -21,7 +23,9 @@ export const pageTitles: Record<SectionType, string> = {
   process: 'Our Process - Meridian Core Solutions',
   markets: 'Markets - Meridian Core Solutions',
   testimonials: 'Testimonials - Meridian Core Solutions',
-  teams: 'Leadership Team - Meridian Core Solutions',
+  teams: 'Team - Meridian Core Solutions',
+  privacy: 'Privacy Policy - Meridian Core Solutions',
+  terms: 'Terms of Service - Meridian Core Solutions',
   contact: 'Contact Us - Meridian Core Solutions'
 };
 
@@ -71,7 +75,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
 
 // Helper function to validate section
 const isValidSection = (section: string): section is SectionType => {
-  return ['home', 'about', 'services', 'process', 'markets', 'testimonials', 'contact'].includes(section);
+  return ['home', 'about', 'services', 'process', 'markets', 'testimonials', 'contact', 'teams', 'privacy', 'terms'].includes(section);
 };
 
 // Custom hook with type safety
